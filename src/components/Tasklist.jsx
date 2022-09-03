@@ -1,12 +1,16 @@
 import TaskCard from './TaskCard'
+import {useContext} from 'react'
+import {GlobalContext} from '../context/Context'
 
-const Tasklist = ({data, deleteTask}) => {
+const Tasklist = () => {
+
+  const {tasks} = useContext(GlobalContext)
 
   return (
     <div>
       <h1>
         <ul>
-           {data.map(t => <TaskCard data={t} key={t.id} deleteTask={deleteTask}/> )}
+           {tasks.map(t => <TaskCard data={t} key={t.id} /> )}
         </ul>
       </h1>
     </div>

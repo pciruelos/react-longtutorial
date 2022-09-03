@@ -1,10 +1,14 @@
-import React from 'react'
+import React,{useContext} from 'react'
+import {GlobalContext} from '../context/Context'
 
-const TaskCard = ({data, deleteTask}) => {
+const TaskCard = ({data}) => {
 
-  const handleDelete = (id) => { 
+  const {deleteTask} = useContext(GlobalContext)
+
+  const handleDelete = () => { 
     deleteTask(data.id)
    };
+
   return (
     <>
     <li>Task:{data.todo}</li>

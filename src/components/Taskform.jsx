@@ -1,6 +1,8 @@
-import React,{useState} from 'react'
+import React,{useState,useContext} from 'react'
+import {GlobalContext} from '../context/Context'
 
-const Taskform = ({createTask}) => {
+const Taskform = () => {
+    const {createTask} = useContext(GlobalContext)
 
     const [todo, setTodo] = useState('')
 
